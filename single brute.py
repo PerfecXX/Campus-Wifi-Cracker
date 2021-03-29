@@ -8,7 +8,7 @@ _PasswordList = []
 user_cnt = 0
 pass_cnt = 0
 _UserList.append(str(input("Enter UserID:")))
-browser = webdriver.Chrome("../reg test/chromedriver.exe")
+browser = webdriver.Chrome("/chromedriver.exe")
 
 
 browser.get("http://192.168.50.1/portal/user-authen.php")
